@@ -1,0 +1,20 @@
+{
+    "introduction": {
+        "title": "Introduction",
+        "description": "Loremimpus",
+        "video": "D44qNwrPC_M",
+        "detail": {
+            "title": "For <code class=\"highlighter-rouge\">more</code> detail.",
+            "content": "lorem"
+        }
+    },
+    "download": {
+        "title": "Download",
+        "description": "Loremimpus",
+        "video": "D44qNwrPC_M",
+        "detail": {
+            "title": "",
+            "content": ""
+        }
+    }
+}

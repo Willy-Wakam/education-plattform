@@ -1,0 +1,4353 @@
+[
+  [
+    "AtScript",
+    "Basic",
+    "Input-Control",
+    "Special",
+    "Layout",
+    "Navigation",
+    "Network Element",
+    "Animation",
+    "Multimedia",
+    "Game"
+  ],
+  {
+    "type": "Image",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Image type displays an image.\nThe source of the image is specified as a URL using the source property. Images can be supplied in any of the standard image formats supported by Artefact, including bitmap formats such as PNG and JPEG, and vector graphics formats such as SVG. If you need to display animated images, use AnimatedImage.<br>\nIf the width and height properties are not specified, the Image automatically uses the size of the loaded image. By default, specifying the width and height of the item causes the image to be scaled to that size.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Image type.",
+        "code": {
+          "at": "Image{  \n  id: \"example\",\n  width: 246,\n  height: 237,\n  x: 19,\n  y: 62,\n  source: \"Resources/steve.jobs.jpg\"\n}\n",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "Image can handle any image format supported by At, loaded from any URL scheme supported by At.\nThe URL may be relative to the base URL of the project.\n",
+        "code": "...",
+        "inputType": "url"
+      },
+      {
+        "type": "DocuCode",
+        "title": "border",
+        "value": "The boder and borderColor used to draw the border of the image.\nA border of 1 creates a thin line. For no line, use a width of 0 or a transparent color.\nNote: The width of the image's border does not affect the geometry of the image.\nThe border is rendered within the images's boundaries.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "borderColor",
+        "value": "The boder and borderColor used to draw the border of the image.\nA border of 1 creates a thin line. For no line, use a width of 0 or a transparent color.\nNote: The width of the image's border does not affect the geometry of the image.\nThe border is rendered within the images's boundaries.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "radius",
+        "value": "This property holds the corner radius used to draw a rounded image.\nIf radius is non-zero, the image will be painted as a rounded image, otherwise it will be painted as a normal image. The same radius is used by all 4 corners; there is currently no way to specify different radius for different corners.\n",
+        "code": "\nImage{  \n  id: \"example\",\n  width: 246,\n  height: 237,\n  x: 19,\n  y: 62,\n  source: \"Resources/steve.jobs.jpg\",\n  border: 5,\n  radius: 8,\n  borderColor: \"#5167b1\"\n}",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "repeat",
+        "value": "Set this property to define what happens when the source image has a different size than the item.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 1
+  },
+  {
+    "type": "Item",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Item type is the base type for all visual items in At. <br>\nAll visual items in Artefact inherit from Item. Although an Item object has no visual appearance, it defines all the attributes that are common across visual items, such as x and y position, width and height, anchoring and key handling support. <br>\nThe Item type can be useful for grouping several items under a single root visual item.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Image type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"ExampleItem\",\n  width: 378,\n  height: 314,\n  x: 0,\n  y: 0,\n  child: [\n    Image{     \n      id: \"imageExampleItem1\",\n      width: 100,\n      height: 100,\n      x: 0,\n      y: 0,\n      source: \"Resources/javascript.png\"\n    },\n    Image{     \n      id: \"imageExampleItem3\",\n      width: 100,\n      height: 100,\n      x: 88,\n      y: 89,\n      source: \"Resources/java.jpg\"\n    }\n  ]\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 2
+  },
+  {
+    "type": "Rectangle",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Rectangle items are used to fill areas with solid color or gradients, and/or to provide a rectangular border.<br>\nEach Rectangle item is painted using either a solid fill color, specified using the color property, or a gradient, defined using a Gradient type and set using the gradient property. If both a color and a gradient are specified, the gradient is used.<br>\nYou can add an optional border to a rectangle with its own color and thickness by setting the borderolCor and border properties. Set the color to \"transparent\" to paint a border without a fill color.<br>\nYou can also create rounded rectangles using the radius property.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Image type.",
+        "code": {
+          "at": "\nRectangle{  \n  id: \"exampleRectangle\",\n  width: 170,\n  height: 164,\n  x: 60,\n  y: 13,\n  color: \"#328ef1\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "This property holds the color used to fill the rectangle.\nThe default color is transparent.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gradiant",
+        "value": "This property defines if the rectangle will be fill with the gradient or not.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "firstColor",
+        "value": "This define the first color of the gradiant.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "secondColor",
+        "value": "This define the second color of the gradiant.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gradiantAngle",
+        "value": "Theís define angle of the gradiant. It is the angle of the line between the first- and secondColor.",
+        "code": "...",
+        "inputType": "int(deg)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "border",
+        "value": "The boder and borderColor used to draw the border of the rectangle.\nA border of 1 creates a thin line. For no line, use a border of 0 or a transparent color.\nNote: The border of the rectangle's border does not affect the geometry of the rectangle.\nThe border is rendered within the rectangle's boundaries.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "borderColor",
+        "value": "The boder and borderColor used to draw the border of the rectangle.\nA border of 1 creates a thin line. For no line, use a border of 0 or a transparent color.\nNote: The border of the rectangle's border does not affect the geometry of the rectangle.\nThe border is rendered within the rectangle's boundaries.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "radius",
+        "value": "This property holds the corner radius used to draw a rounded rectangle.\nIf radius is non-zero, the rectangle will be painted as a rounded rectangle, otherwise it will be painted as a normal rectangle. The same radius is used by all 4 corners; there is currently no way to specify different radius for different corners. \n",
+        "code": "\nRectangle{  \n  id: \"exampleRectangle\",\n  width: 170,\n  height: 164,\n  x: 60,\n  y: 13,\n  gradiant: true,\n  firstColor: \"#704ce5\",\n  secondColor: \"#1ee2cb\",\n  border: 2,\n  borderColor: \"#c608bd\",\n  radius: 5\n}, \n  ",
+        "inputType": "int"
+      }
+    ],
+    "ip": 3
+  },
+  {
+    "type": "Text",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Text type displays a Text. \nIt can display both plain and rich text.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Text type.",
+        "code": {
+          "at": "Text{  \n  id: \"exampleText\",\n  width: 170,\n  height: 166,\n  x: 0,\n  y: 0,\n  value: \"Welcome to Artefact!!!\",\n  horizontalAlign: \"center\",\n  verticalAlign: \"center\",\n  color: \"#55cf9c\",\n  fontFamily: \"Segoe Script\",\n  fontSize: 30,\n  font.bold: true\n} ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The text to display.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "horizontalAlign",
+        "value": "Sets the horizontal alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "verticalAlign",
+        "value": "Sets the vertical alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "This property holds the color used to fill the rectangle.\nThe default color is transparent.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontFamily",
+        "value": "Sets the family name of the font.\nThe family name is case insensitive and may optionally include a foundry name, e.g. \"Helvetica [Cronyx]\". If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontSize",
+        "value": "Sets the font size in pixels.\nUsing this function makes the font device dependent.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "police",
+        "value": "This property defines some styling for the Text.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textO",
+        "value": "Activate the textOverflow",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textOverflow",
+        "value": "Define the size of the overflow.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "lineHeight",
+        "value": "Define the height of a single line.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "letterSpacing",
+        "value": "Define the space size between two letters.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "wordSpacing",
+        "value": "Define the space size between two word.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 4
+  },
+  {
+    "type": "TextEdit",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The TextEdit item displays a block of editable, formatted text. \nIt can display both plain and rich text.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TextEdit type.",
+        "code": {
+          "at": "\nTextEdit{  \n  id: \"exampleTextEdit\",\n  width: 411,\n  height: 141,\n  x: 0,\n  y: 0,\n  value: \"Type some text\",\n  color: \"#e6a7b3\",\n  fontSize: 50,\n  font.underline: true,\n  fontFamily: \"Brush Script MT\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The text to display.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "horizontalAlign",
+        "value": "Sets the horizontal and vertical alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "verticalAlign",
+        "value": "Sets the horizontal and vertical alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "This property holds the color used to fill the rectangle.\nThe default color is transparent.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontFamily",
+        "value": "Sets the family name of the font.\nThe family name is case insensitive and may optionally include a foundry name, e.g. \"Helvetica [Cronyx]\". If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontSize",
+        "value": "Sets the font size in pixels.\nUsing this function makes the font device dependent.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "police",
+        "value": "This property defines some styling for the Text.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textO",
+        "value": "Activate the textOverflow.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textOverflow",
+        "value": "Define the size of the overflow.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 5
+  },
+  {
+    "type": "Icon",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Icon type displays an icon. "
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Icon type.",
+        "code": {
+          "at": "\nIcon{  \n  id: \"exampleIcon\",\n  width: 190,\n  height: 179,\n  x: 0,\n  y: 0,\n  iconName: \"ion-ios-paper-plane\",\n  size: 200,\n  color: \"#ebfa89\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "iconName",
+        "value": "The source of the icon is specified as a String, which is the code-name of the icon depending of the Tool (Ionic-Icons / Material-Design-Icon).",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "size",
+        "value": "This property allows to set how big the icon will be.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color set the color of the icon.",
+        "code": "...",
+        "inputType": "color"
+      }
+    ],
+    "ip": 6
+  },
+  {
+    "type": "ScrollArea",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "ScrollArea provides scrolling for user-defined content."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the ScrollArea type.",
+        "code": {
+          "at": "ScrollArea{  \n  id: \"exampleScroll\",\n  width: 260,\n  height: 366,\n  x: 0,\n  anchors.top: 0,\n  child: [\n    Rectangle{\n     \n      id: \"rectangleexampleScroll1\",\n      width: 100,\n      height: 584,\n      x: 67,\n      y: 125,\n      color: \"#5981ee\"\n    }\n  ],\n  overflow: \"hidden\",\n  overflowY: \"scroll\"\n}",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuText",
+        "title": "Property Documentation",
+        "value": "ScrollView have all the property of the Rectangle and another like:"
+      },
+      {
+        "type": "DocuCode",
+        "title": "overflow",
+        "value": "Activate the textOverflow.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "overflowX",
+        "value": "This property defines the way the overflow will be display in the horizontal.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "overflowY",
+        "value": "This property defines the way the overflow will be display in the vertical.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "styleMode",
+        "value": "This property enables you to select the custum style you want. 0 is for the normal (default) style. You have a choice from 1 to 15.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "barWidth",
+        "value": "Define the width/height of the scrollbar.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "barBackgroundColor",
+        "value": "Define the color to be set on the background of the scrollbar.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "barColor",
+        "value": "Define the color of the background.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 7
+  },
+  {
+    "type": "Link",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Link allow you to set a connection to another page / Anchors."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Link type.",
+        "code": {
+          "at": "Item{  \n  id: \"example\",\n  width: 246,\n  height: 58,\n  x: 0,\n  y: 0,\n  child: [\n    Link{     \n      id: \"linkexample1\",\n      width: 200,\n      height: 31,\n      child: [\n        Text{         \n          id: \"textlinkexample11\",\n          width: \"auto\",\n          height: \"auto\",\n          value: \"Go to Artefact.\"\n        }\n      ],\n      to: \"https://artefact.yo.fr/\"\n    }\n  ]\n}",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "to",
+        "value": "The url of the link.",
+        "code": "...",
+        "inputType": "url (string)"
+      }
+    ],
+    "ip": 8
+  },
+  {
+    "type": "Button",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Button presents a push-button control that can be pushed or clicked by the user. Buttons are normally used to perform an action, or to answer a question. Typical buttons are OK, Apply, Cancel, Close, Yes, No, and Help."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Button type.",
+        "code": {
+          "at": "Button{  \n  id: \"exampleButton\",\n  width: 241,\n  height: 44,\n  x: 22,\n  y: 25,\n  backgroundColor: \"#6729ee\",\n  icon: \"ion-ios-aperture\",\n  hasIcon: true,\n  dark: true,\n  value: \"Artefact is cool\"\n}, ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "backgroundColor",
+        "value": "define the color of the button.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontSize",
+        "value": "Define the size of the text on the button.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontFamily",
+        "value": "Sets the family name of the font.\nThe family name is case insensitive and may optionally include a foundry name, e.g. \"Helvetica [Cronyx]\". If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "elevation",
+        "value": "Set the depth of the shadow.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "When the color of the button dark is, set this to true will change the color of the text on the Button to white.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onClicked",
+        "value": "This signal is emitted when the button is interactively clicked by the user via touch, mouse, or keyboard.",
+        "code": "...",
+        "inputType": "signal (JS)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The text to display.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "icon",
+        "value": "The name of the icon to display.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "depressed",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fab",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flat",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "outline",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rounded",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tile",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disable",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "loading",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onlyIcon",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "hasIcon",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "iconLeft",
+        "value": "",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "define the color of the text or icon in the button.",
+        "code": "...",
+        "inputType": "color"
+      }
+    ],
+    "ip": 9
+  },
+  {
+    "type": "CheckBox",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A CheckBox is an option button that can be toggled on (checked) or off (unchecked). Checkboxes are typically used to represent features in an application that can be enabled or disabled without affecting others.\nThe state of the checkbox can be set with the checked property.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the CheckBox type.",
+        "code": {
+          "at": "\nCheckBox{  \n  id: \"exampleCheckBox\",\n  width: 118,\n  height: 62,\n  x: 20,\n  y: 15,\n  checked: true,\n  label: \"artefact\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "Sets input label.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "checked",
+        "value": "This property set the state of the CheckBox.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disabled",
+        "value": "Disable the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readOnly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "error",
+        "value": "Puts the input in a manual error state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "success",
+        "value": "Puts the input in a manual success state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "indeterminate",
+        "value": "Sets an indeterminate state for the checkbox.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 10
+  },
+  {
+    "type": "ComboBox",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "ComboBox is a combined button and popup list. It provides a means of presenting a list of options to the user in a way that takes up the minimum amount of screen space.\nComboBox is populated with a data model. The data model is commonly a JavaScript array, or an integer, but other types of data models are also supported.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the ComboBox type.",
+        "code": {
+          "css": "Rectangle {\n}",
+          "js": "",
+          "at": ""
+        }
+      },
+      {
+        "type": "DocuText",
+        "title": "Property Documentation",
+        "value": ""
+      },
+      {
+        "type": "DocuCode",
+        "title": "pp1",
+        "value": "dddddd",
+        "code": "...",
+        "inputType": "ppType1"
+      }
+    ],
+    "ip": 11
+  },
+  {
+    "type": "Radio",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A Radio is an option button that can be toggled on (checked) or off (unchecked). Checkboxes are typically used to represent features in an application that can be enabled or disabled without affecting others.\nThe state of the checkbox can be set with the checked property.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the CheckBox type.",
+        "code": {
+          "at": "Radio{  \n  id: \"exampleRadio\",\n  width: 118,\n  height: 62,\n  x: 20,\n  y: 15,\n  checked: true,\n  label: \"artefact\"\n}",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "Sets input label.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "checked",
+        "value": "This property set the state of the Radio.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disabled",
+        "value": "Disable the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readOnly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "error",
+        "value": "Puts the input in a manual error state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "success",
+        "value": "Puts the input in a manual success state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "indeterminate",
+        "value": "Sets an indeterminate state for the checkbox.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 12
+  },
+  {
+    "type": "Slider",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Slider type.",
+        "code": {
+          "at": "Slider{  \n  id: \"exampleSlider\",\n  width: 319,\n  height: 100,\n  x: 10,\n  y: 20,\n  appendIcon: \"ion-ios-add\",\n  prependIcon: \"ion-ios-paper-plane\"\n}, ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "min",
+        "value": "Define the minimal value of the slider.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "max",
+        "value": "Define the maximal value of the slider.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "Set the current value of the Slider between the min and the max.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Define the color of the Slider.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "trackColor",
+        "value": "Define the color of the track if it is showed.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "It is the text wich will be show near the slider (right or left (default)).",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "inverseLabel",
+        "value": "Set the label to right.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbLabel",
+        "value": "Define if the thumb will be show or not. You have the choice between: *true* and *always*",
+        "code": "...",
+        "inputType": "bool | String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbSize",
+        "value": "Controls the size of the thumb label.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbColor",
+        "value": "Sets the thumb and thumb label color.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appendIcon",
+        "value": "Appends an icon to the component.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prependIcon",
+        "value": "Prepends an icon to the component.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAppendClicked",
+        "value": "The signal will be emitted when the append icon will be clicked.",
+        "code": "...",
+        "inputType": "Signal (Js)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onPrependClicked",
+        "value": "The signal will be emitted when the append icon will be clicked.",
+        "code": "...",
+        "inputType": "Signal (Js)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disable",
+        "value": "Disable the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readonly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "vertical",
+        "value": "Changes slider direction to vertical.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "ticks",
+        "value": "Show track ticks. If true it shows ticks when using slider. If set to 'always' it always shows ticks.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "step",
+        "value": "If greater than 0, sets step interval for ticks.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tickSize",
+        "value": "Controls the size of ticks.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tickLabels",
+        "value": "When provided with Array, will attempt to map the labels to each step-in index order.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rules",
+        "value": "Accepts an array of functions that take an input value as an argument and return either true / false or a string with an error message.",
+        "code": "...",
+        "inputType": "Array"
+      }
+    ],
+    "ip": 13
+  },
+  {
+    "type": "RangeSlider",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "RangeSliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the RangeSlider type.",
+        "code": {
+          "at": "\nRangeSlider{  \n  id: \"exampleRangeSlider\",\n  width: 263,\n  height: 100,\n  x: 0,\n  y: 0,\n  min: -50,\n  max: 250,\n  model: \"range\"\n}, \n  ",
+          "js": "Data range = [-10, 120]",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "min",
+        "value": "Define the minimal value of the slider.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "max",
+        "value": "Define the maximal value of the slider.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Define the color of the RangeSlider.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "trackColor",
+        "value": "Define the color of the track if it is showed.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "It is the text wich will be show near the slider (right or left (default)).",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "inverseLabel",
+        "value": "Set the label to right.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbLabel",
+        "value": "Define if the thumb will be show or not. You have the choice between: *true* and *always*",
+        "code": "...",
+        "inputType": "bool | String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbSize",
+        "value": "Controls the size of the thumb label.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "thumbColor",
+        "value": "Sets the thumb and thumb label color.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appendIcon",
+        "value": "Appends an icon to the component.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prependIcon",
+        "value": "Prepends an icon to the component.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAppendClicked",
+        "value": "The signal will be emitted when the append icon will be clicked.",
+        "code": "...",
+        "inputType": "Signal (Js)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onPrependClicked",
+        "value": "The signal will be emitted when the append icon will be clicked.",
+        "code": "...",
+        "inputType": "Signal (Js)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disable",
+        "value": "Disable the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readonly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "vertical",
+        "value": "Changes slider direction to vertical.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "ticks",
+        "value": "Show track ticks. If true it shows ticks when using slider. If set to 'always' it always shows ticks.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "step",
+        "value": "If greater than 0, sets step interval for ticks.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tickSize",
+        "value": "Controls the size of ticks.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tickLabels",
+        "value": "When provided with Array, will attempt to map the labels to each step-in index order.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rules",
+        "value": "Accepts an array of functions that take an input value as an argument and return either true / false or a string with an error message.",
+        "code": "...",
+        "inputType": "Array"
+      }
+    ],
+    "ip": 14
+  },
+  {
+    "type": "TextArea",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The TextArea item displays a block of editable, formatted text. \nIt can display both plain and rich text.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TextArea type.",
+        "code": {
+          "at": "\nTextArea{  \n  id: \"exampleTextArea\",\n  width: 327,\n  height: 106,\n  x: 0,\n  y: 0,\n  mode: \"solo\",\n  label: \"Description\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The text to display.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "horizontalAlign",
+        "value": "Sets the horizontal and vertical alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "verticalAlign",
+        "value": "Sets the horizontal and vertical alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "This property holds the color used to fill the rectangle.\nThe default color is transparent.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontFamily",
+        "value": "Sets the family name of the font.\nThe family name is case insensitive and may optionally include a foundry name, e.g. \"Helvetica [Cronyx]\". If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontSize",
+        "value": "Sets the font size in pixels.\nUsing this function makes the font device dependent.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "police",
+        "value": "This property defines some styling for the Text.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textO",
+        "value": "Activate the textOverflow",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textOverflow",
+        "value": "Define the size of the overflow.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 15
+  },
+  {
+    "type": "MouseArea",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A MouseArea is an invisible item that is typically used in conjunction with a visible item in order to provide mouse handling for that item. By effectively acting as a proxy, the logic for mouse handling can be contained within a MouseArea item. <br>\nMouseArea is an invisible Item, but it has a visible property. When set to false, the mouse area becomes transparent to mouse events.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the MouseArea type.",
+        "code": {
+          "at": "\nRectangle{ \n \n \n  id: \"example\",\n  width: 100,\n  height: 100,\n  x: 26,\n  y: 39,\n  gradiant: true,\n  firstColor: \"#6c68ef\",\n  secondColor: \"#9791e6\",\n  border: 0,\n  radius: 5,\n  child: [\n    MouseArea{\n     \n      id: \"mouseareaexample1\",\n      anchors.right: 0,\n      anchors.left: 0,\n      anchors.top: 0,\n      anchors.bottom: 0,\n      cursor: \"help\",\n      onClicked: \"doSomeAction\"\n    }\n  ]\n}, \n  ",
+          "js": "Method doSomeAction(){\n\talert('Amazing !!!');\n}",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "onClicked",
+        "value": "This signal is emitted when there is a click. A click is defined as a press followed by a release.",
+        "code": "...",
+        "inputType": "signal (Js)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "cursor",
+        "value": "This property holds the cursor shape for this mouse area. Note that on platforms that do not display a mouse cursor this may have no effect.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tooltipLabel",
+        "value": "Allow you to set the text which will be show in the Tooltip.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tooltipPosition",
+        "value": "Set the position, where the ToolTip will be show. You have a choice between one of the values:<br>\n<b>up</b>, <b>down</b>, <b>left</b>, <b>right</b>, <b> up-left</b>, <b>up-right</b>, <b>down-left</b> or <b>down-right</b>.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tooltipLength",
+        "value": "By default, tooltips will always remain single-line no matter their length. You can change this behavior by choosing one of the values:<br>\n<b>small</b>, <b>medium</b>, <b>large</b> or <b>fit</b>.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tooltipBlunt",
+        "value": "If for some reason you do not want animations in your tooltips, you can set this attribute to <b>true</b>.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tooltipVisible",
+        "value": "If you want to show tooltips even when user interaction isn't happening, you can simply set this attribute to <b>true</b>.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 16
+  },
+  {
+    "type": "TextField",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "TextField is a single line text editor. TextField extends TextInput with a placeholder text functionality, and adds decoration."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TextField type.",
+        "code": {
+          "at": "\nTextField{  \n  id: \"exampleTextField\",\n  width: 483,\n  height: 60,\n  x: 27,\n  y: 39,\n  mode: \"outlined\",\n  label: \"so simple\",\n  fontSize: 20\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "mode",
+        "value": "This property set the mode of the Button. It could be: regular, solo, box, outline.",
+        "code": "...",
+        "inputType": "url (string)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prependIcon",
+        "value": "Put an icon at the left of the TextField.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appendIcon",
+        "value": "Put an icon at the right of the TextField.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "The description of the TextField (this property is different depending to the Placeholder)",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The current value of the text writed in the Field.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "placeholder",
+        "value": "Sets the input�s placeholder text.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "align",
+        "value": "Sets the horizontal alignment of the text within the TextEdit item's width and height. By default, the text alignment follows the natural alignment of the text, for example text that is read from left to right will be aligned to the left.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)).",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontFamily",
+        "value": "Sets the family name of the font.\nThe family name is case insensitive and may optionally include a foundry name, e.g. \"Helvetica [Cronyx]\". If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.\n",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fontSize",
+        "value": "Sets the font size in pixels.\nUsing this function makes the font device dependent.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "police",
+        "value": "This property defines some styling for the Text.",
+        "code": "...",
+        "inputType": "Enum"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textO",
+        "value": "Activate the textOverflow.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "textOverflow",
+        "value": "Define the size of the overflow.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 17
+  },
+  {
+    "type": "Select",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "TextField is a single line text editor. TextField extends TextInput with a placeholder text functionality, and adds decoration."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Select type.",
+        "code": {
+          "at": "Select{ \nid: \"selecttest11\",\nwidth: 195,\nheight: 100,\nx: 376,\ny: 52,\nprependIcon: \"ion-ios-alarm\",\nitems: [\n\"UI\",\n\"Artefact\"\n],\nmode: \"filled\",\nappendIcon: \"ion-ios-add\",\nchips: true,\nmultiple: true,\nmodel: selected\n}\n",
+          "js": "Data selected = null;",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "mode",
+        "value": "This property set the mode of the Select field. It could be: regular, solo, box, outline.",
+        "code": "...",
+        "inputType": "url (string)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prependIcon",
+        "value": "Put an icon at the left of the field.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appendIcon",
+        "value": "Put an icon at the right of the field.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "The description of the field (this property is different depending to the Placeholder)",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "items",
+        "value": "The possible values of the select Field.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "placeholder",
+        "value": "Sets the input's placeholder text.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "chips",
+        "value": "Changes display of selections to chips.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "multiple",
+        "value": "Allow you to select multiple items.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "sloted",
+        "value": "Can be used to customize the way selected values are shown in the input. This is great when you want something like <b>foo (+20 others)</b> or don't want the selection to occupy multiple lines.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disabled",
+        "value": "Disables the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "Applies the dark theme variant to the component.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readOnly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 18
+  },
+  {
+    "type": "CircularProgress",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The CircularProgress is used to give an indication of the progress of an operation. value is updated regularly and must be between minimum value and maximum value."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the CircularProgress type.",
+        "code": {
+          "at": "\nCircularProgress{  \n  id: \"example\",\n  width: 100,\n  height: 100,\n  x: 76,\n  y: 43,\n  color: \"#ea7c2d\",\n  value: 22,\n  size: 6,\n  rotateBar: 150\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The current value of the progression.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "size",
+        "value": "Define how big the colored bar will be.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Define the color of the progress.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "indetermined",
+        "value": "Set the progression to undefined and display a loop.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rotate",
+        "value": "Rotates the circle start point in deg.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 19
+  },
+  {
+    "type": "LinearProgress",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The LinearProgress is used to give an indication of the progress of an operation. value is updated regularly and must be between minimum value and maximum value."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the LinearProgress type.",
+        "code": {
+          "at": "\nLinearProgress{  \n  id: \"example\",\n  width: 353,\n  height: 16,\n  x: 0,\n  y: 44,\n  value: 45,\n  color: \"#e10c6c\",\n  striped: true,\n  rounded: true\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "value",
+        "value": "The current value of the progression.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Define the color of the progress.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "backgroundOpacity",
+        "value": "Define how much the background of the bar will be transparent.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "indetermined",
+        "value": "Set the progression to undefined and display a loop.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "active",
+        "value": "Reduce the height to 0, hiding component.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "striped",
+        "value": "Adds a stripe background to the filled portion of the progress component.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rounded",
+        "value": "Adds a border radius to the progress component.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 20
+  },
+  {
+    "type": "AnimatedImage",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The AnimatedImage type extends the features of the Image type, providing a way to play animations stored as images containing a series of frames, such as those stored in GIF files."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the AnimatedImage type.",
+        "code": {
+          "at": "\nAnimatedImage{  \n  id: \"example\",\n  width: 220,\n  height: 179,\n  x: 0,\n  y: 0,\n  source: \"Resources/warrior.gif\"\n}\n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuText",
+        "title": "Property Documentation",
+        "value": ""
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "AnimatedImage can handle any image format supported by At, loaded from any URL scheme supported by At.\nThe URL may be relative to the base URL of the project.\n",
+        "code": "...",
+        "inputType": "url (string)"
+      }
+    ],
+    "ip": 21
+  },
+  {
+    "type": "Parallax",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Parallax component creates a 3d effect that makes an image appear to scroll slower than the window."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Parallax type.",
+        "code": {
+          "at": "Item{  \n  id: \"example\",\n  height: 2000,\n  y: 0,\n  anchors.left: 0,\n  anchors.right: 0,\n  child: [\n    Parallax{    \n      id: \"parallaxexample111111\",\n      height: 300,\n      y: 500,\n      anchors.left: 0,\n      anchors.right: 0,\n      source: \"Resources/call-to-action-bg.jpg\"\n    }\n  ]\n}, ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "Parallax can handle any image format supported by At, loaded from any URL scheme supported by At.\nThe URL may be relative to the base URL of the project. \n",
+        "code": "...",
+        "inputType": "url (string)"
+      }
+    ],
+    "ip": 22
+  },
+  {
+    "type": "Carousel",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Carousel component is used to display large numbers of visual content on a rotating timer.\nA carousel by default has a slide transition.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Carousel type.",
+        "code": {
+          "at": "\nCarousel{  \n  id: \"example\",\n  height: 447,\n  y: 0,\n  sources: [\n    \"Resources/steve.jobs.jpg\",\n    \"Resources/video-bg.jpg\",\n    \"Resources/intro-bg.jpg\"\n  ],\n  width: 515\n}\n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "sources",
+        "value": "Carousel can handle any image format supported by At, loaded from any URL scheme supported by At.\nThe URL may be relative to the base URL of the project.\n",
+        "code": "...",
+        "inputType": "Array of url"
+      },
+      {
+        "type": "DocuCode",
+        "title": "hideControl",
+        "value": "Hide the two arrow which control the slide of images.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "hideDelemiters",
+        "value": "...",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prevIcon",
+        "value": "Define the icon for the previous button. See the Icon element for more information.",
+        "code": "...",
+        "inputType": "string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "nextIcon",
+        "value": "Define the icon for the next button. See the Icon element for more information.",
+        "code": "...",
+        "inputType": "sting"
+      }
+    ],
+    "ip": 23
+  },
+  {
+    "type": "HtmlObject",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "This element allows you to use and render HTML code."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the HtmlObject type.",
+        "code": {
+          "at": "\nHtmlObject{  \n  id: \"example\",\n  width: 483,\n  height: 212,\n  x: 0,\n  y: 0,\n  code: \"\\n<h2>HTML Forms</h2>\\n\\n<form action=\\\"/action_page.php\\\">\\n  <label for=\\\"fname\\\">First name:</label><br>\\n  <input type=\\\"text\\\" id=\\\"fname\\\" name=\\\"fname\\\" value=\\\"John\\\"><br>\\n  <label for=\\\"lname\\\">Last name:</label><br>\\n  <input type=\\\"text\\\" id=\\\"lname\\\" name=\\\"lname\\\" value=\\\"Doe\\\"><br><br>\\n  <input type=\\\"submit\\\" value=\\\"Submit\\\">\\n</form> \\n\\n<p>If you click the \\\"Submit\\\" button, the form-data will be sent to a page called \\\"/action_page.php\\\".</p>\\n\"\n}, \n  ",
+          "js": "",
+          "css": "#example{\n\tinput{\n\t\tborder-style: dashed;\n\t}\n}"
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "code",
+        "value": "Your Html code to render.",
+        "code": "...",
+        "inputType": "string"
+      }
+    ],
+    "ip": 24
+  },
+  {
+    "type": "Card",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Card component is a versatile component that can be used for anything from a panel to a static image. The card component has numerous helper components to make markup as easy as possible."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Card type.",
+        "code": {
+          "at": "\nCard{ \n  id: \"example\",\n  width: 200,\n  height: 100,\n  x: 15,\n  y: 15,\n  child: [\n    Image{    \n      id: \"imageexample1\",\n      anchors.right: 0,\n      anchors.left: 0,\n      anchors.top: 0,\n      anchors.bottom: 0,\n      source: \"Resources/video-bg.jpg\"\n    },\n    Button{    \n      id: \"buttonexample3\",\n      width: 40,\n      height: 40,\n      fab: true,\n      anchors.horizontalCenter: 0,\n      anchors.bottom: 10,\n      icon: \"ion-ios-play\",\n      hasIcon: true,\n      opacity: 0.6\n    }\n  ]\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "This property holds the color used to fill the card.\nThe default color is transparent.\n",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gradiant",
+        "value": "This property defines if the rectangle will be fill with the gradient or not.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "firstColor",
+        "value": "This define the first color of the gradient.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "secondColor",
+        "value": "This define the second color of the gradient.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gradiantAngle",
+        "value": "Thi�s define angle of the gradient. It is the angle of the line between the first- and secondColor.",
+        "code": "...",
+        "inputType": "int (deg)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "border",
+        "value": "The border and borderColor used to draw the border of the card.\nA border of 1 creates a thin line. For no line, use a border of 0 or a transparent color.\nNote: The border of the rectangle's border does not affect the geometry of the card.\nThe border is rendered within the rectangle's boundaries.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "borderColor",
+        "value": "Define the color of the border.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "radius",
+        "value": "This property holds the corner radius used to draw a rounded card.\nIf radius is non-zero, the rectangle will be painted as a rounded card, otherwise it will be painted as a normal card. The same radius is used by all 4 corners; there is currently no way to specify different radius for different corners.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "elevation",
+        "value": "Designates an elevation applied to the component between 0 and 24.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "outline",
+        "value": "Removes card elevation shadow and adds a thin border.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "loading",
+        "value": "Display a vertical progress bar.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 25
+  },
+  {
+    "type": "Grid",
+    "categorie": "Layout",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Grid is a type that positions its child items in grid formation.\nA Grid creates a grid of cells that is large enough to hold all of its child items, and places these items in the cells from left to right and top to bottom.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Griid type.",
+        "code": {
+          "at": "\nGrid{  \n  id: \"example\",\n  width: 248,\n  height: 245,\n  x: 0,\n  y: 0,\n  child: [\n    Card{     \n      id: \"cardexample1\",\n      width: 100,\n      height: 100,\n      color: \"#b4e247\",\n      modelFor: \"4\",\n      child: [\n        Text{         \n          id: \"textcardexample11\",\n          width: \"auto\",\n          height: \"auto\",\n          anchors.verticalCenter: 0,\n          anchors.horizontalCenter: 0,\n          value: \"<#index#>\"\n        }\n      ]\n    }\n  ],\n  spacing: \"space-between\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "reverse",
+        "value": "Reverse the order of the item.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "spacing",
+        "value": "Define how the space between the child element will be placed.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 26
+  },
+  {
+    "type": "Column",
+    "categorie": "Layout",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Column is a type that positions its child items along a single column. It can be used as a convenient way to vertically position a series of items without using anchors."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "Below is a Column that contains three rectangles of same sizes:",
+        "code": {
+          "at": "\nColumn{  \n  id: \"example\",\n  width: \"auto\",\n  height: 464,\n  x: 0,\n  y: 0,\n  child: [\n    Card{     \n      id: \"cardexample1\",\n      width: 100,\n      height: 100,\n      color: \"#b4e247\",\n      modelFor: \"4\",\n      child: [\n        Text{        \n          id: \"textcardexample11\",\n          width: \"auto\",\n          height: \"auto\",\n          anchors.verticalCenter: 0,\n          anchors.horizontalCenter: 0,\n          value: \"<#index#>\"\n        }\n      ]\n    }\n  ],\n  spacing: \"space-between\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "reverse",
+        "value": "Reverse the order of the item.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "spacing",
+        "value": "Define how the space between the child element will be placed.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 27
+  },
+  {
+    "type": "Row",
+    "categorie": "Layout",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Row is a type that positions its child items along a single row. It can be used as a convenient way to horizontally position a series of items without using anchors."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "Below is a Column that contains three rectangles of same sizes:",
+        "code": {
+          "at": "\nRow{  \n  id: \"example\",\n  width: 464,\n  height: 0,\n  x: 0,\n  y: 0,\n  child: [\n    Card{     \n      id: \"cardexample1\",\n      width: 100,\n      height: 100,\n      color: \"#b4e247\",\n      modelFor: \"4\",\n      child: [\n        Text{         \n          id: \"textcardexample11\",\n          width: \"auto\",\n          height: \"auto\",\n          anchors.verticalCenter: 0,\n          anchors.horizontalCenter: 0,\n          value: \"<#index#>\"\n        }\n      ]\n    }\n  ],\n  spacing: \"space-between\"\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "reverse",
+        "value": "Reverse the order of the item.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "spacing",
+        "value": "Define how the space between the child element will be placed.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 28
+  },
+  {
+    "type": "RouterLink",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Link allow you to set a connection to another page in your project."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the RouterLink type.",
+        "code": {
+          "at": "RouterLink{     \n      id: \"example\",\n      width: 100,\n      height: 100,\n      x: 0,\n      y: 0,\n      to: \"page2\"\n    }\n",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "to",
+        "value": "The url of the link. Here you have to give the name of the route you define in the Router.art.",
+        "code": "...",
+        "inputType": "url"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "The name <b>/ page2</b> is that of a route defined in the<b> Router.art</b> file. This route leads to the <b>Page2.at</b> file."
+      }
+    ],
+    "ip": 29
+  },
+  {
+    "type": "RouterView",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "This element allows you to show a page defined in the Router.art."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the RouterView type.",
+        "code": {
+          "at": "RouterView{     \n      id: \"routerviewrec3\",\n      anchors.right: 0,\n      anchors.left: 0,\n      anchors.top: 0,\n      anchors.bottom: 0\n    }\n",
+          "js": "",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 30
+  },
+  {
+    "type": "TabNavigation",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The TabNavigation component is used for hiding content behind a selectable item. This can also be used as a pseudo-navigation for a page."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TabNavigation type.",
+        "code": {
+          "at": "\nTabNavigation{  \n  id: \"example\",\n  child: [\n    Object{     \n      id: \"page1NaN1\",\n      width: 200,\n      height: 200,\n      x: 0,\n      y: 0,\n      name: \"page2\"\n    },\n    Object{     \n      id: \"page1NaN3\",\n      width: 200,\n      height: 200,\n      x: 0,\n      y: 0,\n      name: \"page3\"\n    }\n  ],\n  tabsTitle: [\n    \"Page1\",\n    \"Page2\"\n  ],\n  color: \"#10c1f7\",\n  sliderColor: \"#f7f7f7\",\n  anchors.right: 0,\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0,\n  dark: true,\n  model: \"tabi\"\n}, \n  ",
+          "js": "Data tabi = null",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "tabsTitel",
+        "value": "The list of the title for every tabs.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "icons",
+        "value": "The list of the icon for every tabs.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color of the top bar.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "sliderColor",
+        "value": "The color of the slider.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "iconRight",
+        "value": "Put the icon of all tab to right (left per default).",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "Applies the dark theme variant to the component.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "centeredBar",
+        "value": "Centers the tabs.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "grow",
+        "value": "Force the tabs to take up all available space.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "verticalBar",
+        "value": "Stacks tabs on top of each other vertically.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rightAlign",
+        "value": "Aligns tabs to the right.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "model",
+        "value": "For this object it is important to define a model. Because it will be used to know every moment the current tab.",
+        "code": "...",
+        "inputType": "var (string)"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "You have to always bind the model with a Data variable. It allows the system to know which tab is currently activated."
+      }
+    ],
+    "ip": 31
+  },
+  {
+    "type": "BottomNavigation",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The BottomNavigation component is used switching between path defined in the Router.art. It is commonly used width the RouterView."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BottomNavigation type.",
+        "code": {
+          "at": "",
+          "js": "",
+          "css": "Rectangle {\n}"
+        }
+      },
+      {
+        "type": "DocuText",
+        "title": "Property Documentation",
+        "value": ""
+      },
+      {
+        "type": "DocuCode",
+        "title": "tabsTitle",
+        "value": "A list of all the title which will render in the top bar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "icons",
+        "value": "A list of icon name. One icon corresponds one title.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color of the top bar.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "sliderColor",
+        "value": "The color of the slider.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "iconsRight",
+        "value": "Define if all the icons bill be on the right marge of the title.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "Set this to true will change the color of the bar to dark and all of the title to white.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "centeredBar",
+        "value": "Define if the titels should be on the center of the bar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "grow",
+        "value": "Force titels to take up all available space.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rightAlign",
+        "value": "Aligns titles to the right.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "shift",
+        "value": "Hide text of button when not active.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "You have to always bind the model with a Data variable. It allows the system to know which tab is currently activated."
+      }
+    ],
+    "ip": 32
+  },
+  {
+    "type": "Object",
+    "categorie": "Special",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Object is used to dynamically load a custum component."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Object type.",
+        "code": {
+          "at": "\nObject{  \n  id: \"page1\",\n  name: \"page1\",\n  anchors.right: 0,\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0\n}\n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "name",
+        "value": "The name of the object to load.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 33
+  },
+  {
+    "type": "AppBar",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The AppBar component is pivotal to any graphical user interface (GUI), as it generally is the primary source of site navigation. The Appbar component works great in conjunction with a NavigationDrawer for providing site navigation in your application."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the AppBar type.",
+        "code": {
+          "at": "\nAppBar{  \n  id: \"example\",\n  child: [\n    Object{    \n      id: \"page1NaN1\",\n      width: 200,\n      height: 200,\n      x: 0,\n      y: 0,\n      name: \"page2\"\n    },\n    Object{     \n      id: \"page1NaN3\",\n      width: 200,\n      height: 200,\n      x: 0,\n      y: 0,\n      name: \"page3\"\n    }\n  ],\n  tabsTitle: [\n    \"Page1\",\n    \"Page2\"\n  ],\n  color: \"#10c1f7\",\n  sliderColor: \"#f7f7f7\",\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0,\n  dark: true,\n  model: \"tabi\",\n  leftBar: [\n    \"ion-md-more\"\n  ],\n  width: 513,\n  rightBar: [\n    \"ion-ios-aperture\",\n    \"ion-md-medal\"\n  ]\n}, \n  ",
+          "js": "Data tabi = null",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "tabsTitle",
+        "value": "A list of all the title which will render in the top bar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "icons",
+        "value": "A list of icon name. One icon corresponds one title.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color of the bar.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "sliderColor",
+        "value": "The color of the slider.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "iconsRight",
+        "value": "Define if all the icons bill be on the right marge of the title.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "When the color of the top bar dark is, set this to true will change the color of all the title on the bar to white.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "centeredBar",
+        "value": "Define if the titles should be on the center of the bar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "grow",
+        "value": "Force titles to take up all available space.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rightAlign",
+        "value": "Aligns titles to the right.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "model",
+        "value": "For this object it is important to define a model. Because it will be used to know every moment the current tab.",
+        "code": "...",
+        "inputType": "var (string)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "Specifies an image as the component's background.",
+        "code": "...",
+        "inputType": "url (string)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "elevationOnScroll",
+        "value": "Elevates the AppBar when scrolling",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "hideOnScroll",
+        "value": "Hide the AppBar when scrolling.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fadeOnScroll",
+        "value": "A list of all the title which will render in the top bar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fadeImageOnScroll",
+        "value": "When using the source prop, will fade the image when scrolling.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collapse",
+        "value": "Put the ToolBar into a collapsed state reducing its maximum width.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collapseOnScroll",
+        "value": "Put the ToolBar into collapsed state when scrolling.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "extends",
+        "value": "Use this prop to increase the height of the toolbar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "prominent",
+        "value": "Increases the height of the toolbar content to 128px.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leftBar",
+        "value": "A list of all the icons which will be render in the left of the bar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rightBar",
+        "value": "A list of all the icons which will be render in the right of the bar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leftClick",
+        "value": "A list of signals in which each signal is associated with one of the buttons defined in leftBar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "DocuCode",
+        "title": "rightClick",
+        "value": "A list of signals in which each signal is associated with one of the buttons defined in rightBar.",
+        "code": "...",
+        "inputType": "array of string"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "You have to always bind the model with a Data variable. It allows the system to know which tab is currently activated."
+      }
+    ],
+    "ip": 34
+  },
+  {
+    "type": "ToolBar",
+    "categorie": "Navigation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The AppBar component is pivotal to any graphical user interface (GUI), as it generally is the primary source of site navigation. The Appbar component works great in conjunction with a NavigationDrawer for providing site navigation in your application."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the AppBar type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"NaN\",\n  width: 697,\n  height: 495,\n  x: 0,\n  y: 0,\n  child: [\n    ToolBar{    \n      id: \"NaN11111\",\n      width: 389,\n      height: 339,\n      x: 0,\n      y: 0,\n      child: [\n        Object{        \n          id: \"page2NaN1\",\n          width: 100,\n          height: 100,\n          x: 0,\n          y: 0,\n          name: \"page2\"\n        }\n      ],\n      leftBar: [\n        \"ion-md-medal\"\n      ],\n      color: \"#48b2eb\",\n      rightBar: [\n        \"ion-ios-medal\"\n      ],\n      dark: true,\n      source: \"Resources/steve.jobs.jpg\",\n      extend: true,\n      title: \"Appel\",\n      firstColor: \"#d9ef0d\",\n      secondColor: \"#ea866d\"\n    }\n  ]\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color of the bar.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "dark",
+        "value": "When the color of the top bar dark is, set this to true will change the color of all the title on the bar to white.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "Specifies an image as the component's background.",
+        "code": "...",
+        "inputType": "url (string)"
+      },
+      {
+        "type": "DocuCode",
+        "title": "elevationOnScroll",
+        "value": "Elevates the AppBar when scrolling",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "hideOnScroll",
+        "value": "Hide the AppBar when scrolling.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fadeOnScroll",
+        "value": "A list of all the title which will render in the top bar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "fadeImageOnScroll",
+        "value": "When using the source prop, will fade the image when scrolling.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "extends",
+        "value": "Use this prop to increase the height of the toolbar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "You have to always bind the model with a Data variable. It allows the system to know which tab is currently activated."
+      }
+    ],
+    "ip": 35
+  },
+  {
+    "type": "NetworkImage",
+    "categorie": "Network Element",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The NetworkImage have the same property with the Image object, but it allows to use source from Internet."
+      }
+    ],
+    "ip": 36
+  },
+  {
+    "type": "NetworkCarousel",
+    "categorie": "Network Element",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The NetworkCarousel have the same property with the Carousel object, but it allows to use source from Internet."
+      }
+    ],
+    "ip": 37
+  },
+  {
+    "type": "NetworkAnimatedImage",
+    "categorie": "Network Element",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The NetworkAnimatedImage have the same property with the AnimatedImage object, but it allows to use source from Internet."
+      }
+    ],
+    "ip": 38
+  },
+  {
+    "type": "NetworkVideo",
+    "categorie": "Network Element",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The NetworkVideo have the same property with the Video object, but it allows to use source from Internet."
+      }
+    ],
+    "ip": 39
+  },
+  {
+    "type": "NetworkParallax",
+    "categorie": "Network Element",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The NetworkParallax have the same property with the Parallax object, but it allows to use source from Internet."
+      }
+    ],
+    "ip": 40
+  },
+  {
+    "type": "Transition",
+    "categorie": "Animation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The transition allows you to associate with an element animation for different events."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Transition type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"example\",\n  anchors.right: 0,\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0,\n  child: [\n    Button{     \n      id: \"buttonexample1\",\n      width: 100,\n      height: 47,\n      x: 0,\n      y: 0,\n      color: \"#fff\",\n      backgroundColor: \"#b271f3\",\n      dark: true,\n      onClicked: \"showed = !showed\",\n      value: \"Show/Hide\"\n    },\n    Transition{     \n      id: \"transitionexample3\",\n      width: 271,\n      height: 222,\n      x: 17,\n      y: 65,\n      child: [\n        Card{\n         \n          id: \"cardtransitionexample31\",\n          width: 100,\n          height: 100,\n          x: 20,\n          y: 22,\n          color: \"#70ece4\",\n          modelIf: \"showed\"\n        }\n      ],\n      leaveActiveClass: \"animated tada\",\n      enterActiveClass: \"animated bounce\"\n    }\n  ]\n}, \n  ",
+          "js": "Data showed = true",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "duration",
+        "value": "In most cases, Artefact can automatically figure out when the transition has finished. By default, Artefact waits for the first transition�s end or animation�s end event on the root transition element. However, this may not always be desired - for example, we may have a choreographed transition sequence where some nested inner elements have a delayed transition or a longer transition duration than the root transition element. <br>\n\nIn such cases you can specify an explicit transition duration (in milliseconds) using the duration property.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "name",
+        "value": "The name of the main transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appear",
+        "value": "If you also want to apply a transition on the initial render of a node, you can add the appear attribute.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearActiveClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearToClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterActiveClass",
+        "value": "Active state for enter. Applied during the entire entering phase. Added before element is inserted, removed when transition/animation finishes. This class can be used to define the duration, delay and easing curve for the entering transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterToClass",
+        "value": "Ending state for enter. Added one frame after element is inserted (at the same time enterClass is removed), removed when transition/animation finishes.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterClass",
+        "value": "Starting state for enter. Added before element is inserted, removed one frame after element is inserted.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveClass",
+        "value": "Starting state for leave. Added immediately when a leaving transition is triggered, removed after one frame.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveActiveClass",
+        "value": "Active state for leave. Applied during the entire leaving phase. Added immediately when leave transition is triggered, removed when the transition/animation finishes. This class can be used to define the duration, delay and easing curve for the leaving transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveToClass",
+        "value": "Ending state for leave. Added one frame after a leaving transition is triggered (at the same time leaveClass is removed), removed when the transition/animation finishes.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onBeforeAppear",
+        "value": "signal emitted before appeared.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAppear",
+        "value": "signal emitted when appearing.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAfterAppear",
+        "value": "signal emitted after appeared.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAppearCancelled",
+        "value": "signal emitted when appear cancelled.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onBeforeEnter",
+        "value": "signal emitted before entered.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onEnter",
+        "value": "signal emitted when entering.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAfterEnter",
+        "value": "signal emitted after entered.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onEnterCancelled",
+        "value": "signal emitted when enter cancelled.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onBeforeLeave",
+        "value": "signal emitted before leaved.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onLeave",
+        "value": "signal emitted when leaving.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAfterLeave",
+        "value": "signal emitted after leaved.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onLeaveCancelled",
+        "value": "signal emitted when leave cancelled.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "mode",
+        "value": "Simultaneous entering and leaving transitions aren�t always desirable though, so Artefact offers some alternative transition modes:\n\n�\tin-out: New element transitions in first, then when complete, the current element transitions out.\n\n�\tout-in: Current element transitions out first, then when complete, the new element transitions in.\n",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 41
+  },
+  {
+    "type": "TransitionGroup",
+    "categorie": "Animation",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The transition allows you to associate with a list of items we want to render simultaneously, for example with <b>modelFor</b> animation for different events."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TransitionGroup type.",
+        "code": {
+          "at": "\nItem{ \n \n \n  id: \"example\",\n  anchors.right: 0,\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0,\n  child: [\n    Button{\n     \n      id: \"buttonexample1\",\n      width: 100,\n      height: 47,\n      x: 0,\n      y: 0,\n      color: \"#fff\",\n      backgroundColor: \"#b271f3\",\n      dark: true,\n      onClicked: \"showed = !showed\",\n      value: \"Show/Hide\"\n    },\n    TransitionGroup{\n     \n      id: \"transitionexample3\",\n      width: 271,\n      height: 222,\n      x: 17,\n      y: 65,\n      child: [\n        Card{\n         \n          id: \"cardtransitionexample3111111\",\n          width: 100,\n          height: 100,\n          x: \"<#index * 110#>\",\n          y: 22,\n          color: \"#70ece4\",\n          modelIf: \"showed\",\n          modelFor: \"5\"\n        }\n      ],\n      leaveActiveClass: \"animated slideInUp\",\n      enterActiveClass: \"animated rotateOut\"\n    }\n  ]\n}, \n  ",
+          "js": "Data showed = true",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "duration",
+        "value": "In most cases, Artefact can automatically figure out when the transition has finished. By default, Artefact waits for the first transition�s end or animation�s end event on the root transition element. However, this may not always be desired - for example, we may have a choreographed transition sequence where some nested inner elements have a delayed transition or a longer transition duration than the root transition element.\n\nIn such cases you can specify an explicit transition duration (in milliseconds) using the duration property.\n",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "name",
+        "value": "The name of the main transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appear",
+        "value": "If you also want to apply a transition on the initial render of a node, you can add the appear attribute.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearActiveClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearToClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "appearClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterActiveClass",
+        "value": "Active state for enter. Applied during the entire entering phase. Added before element is inserted, removed when transition/animation finishes. This class can be used to define the duration, delay and easing curve for the entering transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterToClass",
+        "value": "Ending state for enter. Added one frame after element is inserted (at the same time enterClass is removed), removed when transition/animation finishes.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "enterClass",
+        "value": "Starting state for enter. Added before element is inserted, removed one frame after element is inserted.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveClass",
+        "value": "Starting state for leave. Added immediately when a leaving transition is triggered, removed after one frame.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveActiveClass",
+        "value": "Active state for leave. Applied during the entire leaving phase. Added immediately when leave transition is triggered, removed when the transition/animation finishes. This class can be used to define the duration, delay and easing curve for the leaving transition.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "leaveToClass",
+        "value": "Ending state for leave. Added one frame after a leaving transition is triggered (at the same time leaveClass is removed), removed when the transition/animation finishes.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "CalloutNote",
+        "value": "transition classes will be applied to inner elements and not to the group/container itself."
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "Transition modes are not available, because we are no longer alternating between mutually exclusive elements."
+      }
+    ],
+    "ip": 42
+  },
+  {
+    "type": "Canvas",
+    "categorie": "Basic",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Canvas is used to draw graphics"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Canvas type.",
+        "code": {
+          "at": "\nCanvas{  \n  id: \"exampleCanvas\",\n  width: 191,\n  height: 187,\n  x: 0,\n  y: 0\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 43
+  },
+  {
+    "type": "Draggable",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Component allowing drag-and-drop and synchronization with view model array."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Draggable type.",
+        "code": {
+          "at": "\nColumn{ \n \n \n  id: \"example\",\n  width: \"auto\",\n  height: \"auto\",\n  x: 0,\n  y: 0,\n  child: [\n    Draggable{\n     \n      id: \"draggableexample1\",\n      width: 200,\n      height: 100,\n      child: [\n        Card{\n         \n          id: \"carddraggableexample11\",\n          anchors.right: 0,\n          anchors.left: 0,\n          anchors.top: 0,\n          anchors.bottom: 5,\n          radius: 5,\n          child: [\n            Text{\n             \n              id: \"textcarddraggableexample111\",\n              width: \"auto\",\n              height: \"auto\",\n              anchors.verticalCenter: 0,\n              anchors.horizontalCenter: 0,\n              anchors.bottom: 0,\n              value: \"<#item#>\"\n            }\n          ],\n          class: [\n            \"list-group-item\"\n          ]\n        }\n      ],\n      modelFor: \"list\",\n      list: \"list\",\n      ghostClass: \"ghost\",\n      onStarted: \"drag = true\",\n      onEnded: \"drag = false\",\n      class: [\n        \"list-group\"\n      ]\n    }\n  ]\n}, \n  ",
+          "js": "Data drag = false\nData list = [\"Tony Stark\", \"Dannick Stark\", \"Musk\", \"Bill\"]",
+          "css": "\n.ghost {\n  opacity: 0.5;\n  background: #c8ebfb;\n}"
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "disabled",
+        "value": "Disable the drag.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "ghostClass",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "list",
+        "value": "",
+        "code": "...",
+        "inputType": "(js)"
+      },
+      {
+        "type": "CalloutDanger",
+        "value": "Do not use in conjunction with model prop."
+      },
+      {
+        "type": "DocuCode",
+        "title": "handle",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "group",
+        "value": "",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "tag",
+        "value": "node type of the element that draggable component create as outer element for the included slot.\nIt is also possible to pass the name of Artefact�s component as element. In this case, draggable attribute will be passed to the create component.\n",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onStarted",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onEnded",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onChanged",
+        "value": "event is triggered when list prop is not null and the corresponding array is altered due to drag-and-drop operation.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onMoved",
+        "value": "Signal will be emitted when you are dragging a child element.",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onCloned",
+        "value": "Function called on the source component to clone element when clone option is true. The unique argument is the viewModel element to be cloned and the returned value is its cloned version.\nBy default Artefact�s.draggable reuses the viewModel element, so you have to use this hook if you want to clone or deep clone it.\n",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onAdded",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onRemoved",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onUpdated",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onChoosed",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onUnChoosed",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onSorted",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onFiltered",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      }
+    ],
+    "ip": 44
+  },
+  {
+    "type": "Audio",
+    "categorie": "Multimedia",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Allow you to play songs."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Audio type.",
+        "code": {
+          "at": "\nAudio{  \n  id: \"exampleAudio\",\n  width: 254,\n  height: 100,\n  x: 0,\n  y: 0,\n  sources: [\n    \"myMusic.mp3\"\n  ],\n  controls: true\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "The path of the file to play.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "controls",
+        "value": "If this attribute is true, the system will offer controls to allow the user to control audio playback, including volume, seeking, and pause/resume playback.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "autoplay",
+        "value": "A Boolean attribute: if specified, the audio will automatically begin playback as soon as it can do so, without waiting for the entire audio file to finish downloading.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "CalloutNote",
+        "value": "Sites that automatically play audio (or videos with an audio track) can be an unpleasant experience for users, so should be avoided when possible. If you must offer autoplay functionality, you should make it opt-in (requiring a user to specifically enable it). However, this can be useful when creating media elements whose source will be set at a later time, under user control."
+      },
+      {
+        "type": "DocuCode",
+        "title": "loop",
+        "value": "if specified, the audio player will automatically seek back to the start upon reaching the end of the audio.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "mute",
+        "value": "A Boolean attribute that indicates whether the audio will be initially silenced. Its default value is <b>false</b>.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "preload",
+        "value": "This enumerated attribute is intended to provide a hint to the browser about what the author thinks will lead to the best user experience. It may have one of the following values:\n<ul>\n�\t<li>none: Indicates that the audio should not be preloaded. </li>\n�\t<li> metadata: Indicates that only audio metadata (e.g. length) is fetched. </li>\n�\t<li> auto: Indicates that the whole audio file can be downloaded, even if the user is not expected to use it. </li>\n</ul>\n",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "-The autoplay attribute has precedence over preload. If autoplay is specified, the browser would obviously need to start downloading the audio for playback.<br>\n-The browser is not forced by the specification to follow the value of this attribute; it is a mere hint.<br>\n"
+      }
+    ],
+    "ip": 45
+  },
+  {
+    "type": "Video",
+    "categorie": "Multimedia",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Allow you to play video."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Video type.",
+        "code": {
+          "at": "\nVideo{  \n  id: \"exampleVideo\",\n  width: 385,\n  height: 207,\n  x: 0,\n  y: 0,\n  sources: [\n    \"rabbit.mp4\"\n  ],\n  controls: true\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "The path of the file to play.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "controls",
+        "value": "If this attribute is true, the system will offer controls to allow the user to control video playback, including volume, seeking, and pause/resume playback.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "autoplay",
+        "value": "A Boolean attribute: if specified, the video will automatically begin playback as soon as it can do so, without waiting for the entire video file to finish downloading.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "CalloutNote",
+        "value": "Sites that automatically play audio (or videos with an audio track) can be an unpleasant experience for users, so should be avoided when possible. If you must offer autoplay functionality, you should make it opt-in (requiring a user to specifically enable it). However, this can be useful when creating media elements whose source will be set at a later time, under user control."
+      },
+      {
+        "type": "DocuCode",
+        "title": "loop",
+        "value": "if specified, the browser will automatically seek back to the start upon reaching the end of the video.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "mute",
+        "value": "A Boolean attribute that indicates the default setting of the audio contained in the video. If set, the audio will be initially silenced. Its default value is false, meaning that the audio will be played when the video is played.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "preload",
+        "value": "This enumerated attribute is intended to provide a hint to the browser about what the author thinks will lead to the best user experience with regards to what content is loaded before the video is played. It may have one of the following values:\n<ul>\n�\t<li> none: Indicates that the video should not be preloaded. </li>\n�\t<li> metadata: Indicates that only video metadata (e.g. length) is fetched. </li>\n�\t<li> auto: Indicates that the whole video file can be downloaded, even if the user is not expected to use it. </li>\n</ul>\n",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "CalloutWarning",
+        "value": "�\t-The autoplay attribute has precedence over preload. If autoplay is specified, the browser would obviously need to start downloading the audio for playback. <br>\n�\t-The browser is not forced by the specification to follow the value of this attribute; it is a mere hint. <br>\n"
+      }
+    ],
+    "ip": 46
+  },
+  {
+    "type": "Game",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "It is the main controller for the entire <b>Phaser</b> game. It is responsible for handling the boot process, parsing the configuration values, creating the renderer, and setting-up all of the global Phaser systems, such as sound and input. Once that is complete it will start the Scene Manager and then begin the main game loop.<br>\nYou should generally avoid accessing any of the systems created by Game, and instead use those made available to you via the <b>Phaser.Scene</b> Systems class instead.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Game type.",
+        "code": {
+          "at": "\nGame{  \n  id: \"game\",\n  width: 100,\n  height: 100,\n  x: 0,\n  y: 0,\n  child: [\n    Object{     \n      id: \"scene1game1\",\n      width: 100,\n      height: 100,\n      x: 0,\n      y: 0,\n      name: \"Scene1\"\n    }\n  ],\n  \"gravityY\": 300\n}, \n  ",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityX",
+        "value": "The horizontal gravity of the world.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityY",
+        "value": "The vertical gravity of the world.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "debug",
+        "value": "Show a set of useful debug utilities like box, mesh etc",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 47
+  },
+  {
+    "type": "Rectangle",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Rectangle Shape is a Game Object that can be added to a Scene, Group or Container. You can treat it like any other Game Object in your game, such as tweening it, scaling it, or enabling it for input or physics. It provides a quick and easy way for you to render this shape in your game without using a texture, while still taking advantage of being fully batched in WebGL. <br>\nThis shape supports both fill and stroke colors. <br>\nYou can change the size of the rectangle by changing the width and height properties. <br>\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Rectangle type.",
+        "code": {
+          "at": "Rectangle{  \n  id: \"exampleRectangle\",\n  width: 170,\n  height: 164,\n  x: 60,\n  y: 13,\n  color: \"#328ef1\"\n}",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "The color the rectangle will be filled with.",
+        "code": "...",
+        "inputType": "color"
+      }
+    ],
+    "ip": 48
+  },
+  {
+    "type": "Scene",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Scene is where you will put all your elements like personages, 2D box, etc."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Scene type.",
+        "code": {
+          "at": "\nScene{ \n \n \n  id: \"scene1\",\n  width: 100,\n  height: 100,\n  x: 0,\n  y: 0,\n  child: [\n    Rectangle{\n     \n      id: \"rectanglescene19\",\n      color: \"#aacef9\",\n      anchors.right: 0,\n      anchors.left: 0,\n      anchors.top: 0,\n      anchors.bottom: 0\n    },\n    StaticGroup{\n     \n      id: \"group1\",\n      width: 100,\n      height: 100,\n      x: 0,\n      y: 0,\n      child: [\n        Image{\n         \n          id: \"ground12\",\n          width: 97,\n          height: 44,\n          x: 78,\n          source: \"Resources/04.png\",\n          anchors.bottom: 100\n        },\n        Image{\n         \n          id: \"imagegroup13\",\n          width: 100,\n          height: 100,\n          x: 78,\n          y: 190,\n          source: \"Resources/box2.png\"\n        }\n      ]\n    },\n    Image{\n     \n      id: \"imagescene1714\",\n      width: 100,\n      height: 100,\n      x: 81,\n      source: \"Resources/tree1.png\",\n      anchors.bottom: 142\n    },\n    Image{\n     \n      id: \"imagescene15\",\n      width: 76,\n      height: 88,\n      x: 87,\n      source: \"Resources/pers9.png\",\n      physic: \"dynamic\",\n      \"gravity\": 300,\n      gravityY: 300,\n      collideWorldBounds: true,\n      collisionList: [\n        \"group1\"\n      ],\n      y: 0\n    },\n    Sprite{\n     \n      id: \"spritescene19\",\n      x: 0,\n      y: 0,\n      source: \"Resources/hero1.png\",\n      frameWidth: 71,\n      frameHeight: 92,\n      animations: [\n        AnimationItem{\n         \n          key: \"walk\",\n          frameStart: 2,\n          frameEnd: 8,\n          frameRate: 10,\n          repeat: 0,\n          loop: true\n        },\n        AnimationItem{\n         \n          key: \"stay\",\n          frameStart: 11,\n          frameEnd: 13,\n          frameRate: 10,\n          repeat: 1,\n          loop: false\n        }\n      ]\n    }\n  ],\n  onAisDown: [\n    \"avance()\"\n  ],\n  onBisDown: [\n    \"recule()\"\n  ]\n}, \n  ",
+          "js": "Method avance () { \n\tthis.imagescene15.x += 1; \n}\nMethod recule () { \n\tthis.imagescene15.x -= 1; \n}",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "update",
+        "value": "The list of the functions which will be execute every time (FPS).",
+        "code": "...",
+        "inputType": "Array"
+      }
+    ],
+    "ip": 49
+  },
+  {
+    "type": "Image",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "An Image is a light-weight Game Object useful for the display of static images in your game, such as logos, backgrounds, scenery or other non-animated elements. Images can have input events and physics bodies, or be tweened, tinted or scrolled. The main difference between an Image and a Sprite is that you cannot animate an Image as they do not have the Animation component."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Image type.",
+        "code": {
+          "at": "\n        Image{\n         \n          id: \"ground12\",\n          width: 97,\n          height: 44,\n          x: 78,\n          source: \"Resources/04.png\",\n          anchors.bottom: 100\n        },",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "The Path of the image to be loaded.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopLeft",
+        "value": "The alpha value starting from the top-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopRight",
+        "value": "The alpha value starting from the top-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomLeft",
+        "value": "The alpha value starting from the bottom-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomRight",
+        "value": "The alpha value starting from the bottom-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scale",
+        "value": "This is a special setter that allows you to set both the horizontal and vertical scale of this Game Object to the same value, at the same time. When reading this value, the result returned is <b>(scaleX + scaleY) / 2</b>.\n\nUse of this property implies you wish the horizontal and vertical scales to be equal to each other. If this isn't the case, use the <b>scaleX</b> or <b>scaleY</b> properties instead.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleX",
+        "value": "The horizontal scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleY",
+        "value": "The vertical scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipX",
+        "value": "The horizontally flipped state of the Game Object.\n\nA Game Object that is flipped horizontally will render inversed on the horizontal axis. Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipY",
+        "value": "The vertically flipped state of the Game Object.\n\nA Game Object that is flipped vertically will render inversed on the vertical axis (i.e. upside down) Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityX",
+        "value": "Sets the Body's horizontal gravity.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityY",
+        "value": "In most cases, Artefact can automatically figure out when the transition has finished. By default, Artefact waits for the first transition�s end or animation�s end event on the root.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceX",
+        "value": "Sets the Body's horizontal bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceY",
+        "value": "Sets the Body's vertical bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "interactive",
+        "value": "Pass this Game Object to the Input Manager to enable it for Input.\n\nInput works by using hit areas, these are nearly always geometric shapes, such as rectangles or circles, that act as the hit area for the Game Object. However, you can provide your own hit area shape and callback, should you wish to handle some more advanced input detection.\n\nIf no arguments are provided it will try and create a rectangle hit area based on the texture frame the Game Object is using. If this isn't a texture-bound object, such as a Graphics or BitmapText object, this will fail, and you'll need to provide a specific shape for it to use.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "physic",
+        "value": "Set the physic mode of the object. You hve a choice between <b>static</b> and <b>dynamic</b>.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collideWorldBounds",
+        "value": "Sets whether this Body collides with the world boundary.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collisionList",
+        "value": "The list of all object whom will collide with the current object.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onPointerdown",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      }
+    ],
+    "ip": 50
+  },
+  {
+    "type": "Sprite",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A Sprite Game Object is used for the display of both static and animated images in your game. Sprites can have input events and physics bodies. They can also be tweened, tinted, scrolled and animated. <br>\nThe main difference between a Sprite and an Image Game Object is that you cannot animate Images. As such, Sprites take a fraction longer to process and have a larger API footprint due to the Animation Component. If you do not require animation then you can safely use Images to replace Sprites in all cases.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Sprite type.",
+        "code": {
+          "at": "Sprite{\n     \n      id: \"spritescene19\",\n      x: 0,\n      y: 0,\n      source: \"Resources/hero1.png\",\n      frameWidth: 71,\n      frameHeight: 92,\n      animations: [\n        AnimationItem{\n         \n          key: \"walk\",\n          frameStart: 2,\n          frameEnd: 8,\n          frameRate: 10,\n          repeat: 0,\n          loop: true\n        },\n        AnimationItem{\n         \n          key: \"stay\",\n          frameStart: 11,\n          frameEnd: 13,\n          frameRate: 10,\n          repeat: 1,\n          loop: false\n        }\n      ]\n    }",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "The Path of the image to be loaded.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopLeft",
+        "value": "The alpha value starting from the top-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopRight",
+        "value": "The alpha value starting from the top-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomLeft",
+        "value": "The alpha value starting from the bottom-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomRight",
+        "value": "The alpha value starting from the bottom-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scale",
+        "value": "This is a special setter that allows you to set both the horizontal and vertical scale of this Game Object to the same value, at the same time. When reading this value, the result returned is <b>(scaleX + scaleY) / 2</b>.\n\nUse of this property implies you wish the horizontal and vertical scales to be equal to each other. If this isn't the case, use the <b>scaleX</b> or <b>scaleY</b> properties instead.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleX",
+        "value": "The horizontal scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleY",
+        "value": "The vertical scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipX",
+        "value": "The horizontally flipped state of the Game Object. <br>\nA Game Object that is flipped horizontally will render inversed on the horizontal axis. Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipY",
+        "value": "The vertically flipped state of the Game Object. <br>\nA Game Object that is flipped vertically will render inversed on the vertical axis (i.e. upside down) Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityX",
+        "value": "Sets the Body's horizontal gravity.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityY",
+        "value": "In most cases, Artefact can automatically figure out when the transition has finished. By default, Artefact waits for the first transition�s end or animation�s end event on the root.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceX",
+        "value": "Sets the Body's horizontal bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceY",
+        "value": "Sets the Body's vertical bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "interactive",
+        "value": "Pass this Game Object to the Input Manager to enable it for Input. <br>\n\nInput works by using hit areas, these are nearly always geometric shapes, such as rectangles or circles, that act as the hit area for the Game Object. However, you can provide your own hit area shape and callback, should you wish to handle some more advanced input detection. <br>\nIf no arguments are provided it will try and create a rectangle hit area based on the texture frame the Game Object is using. If this isn't a texture-bound object, such as a Graphics or BitmapText object, this will fail, and you'll need to provide a specific shape for it to use.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "physic",
+        "value": "Set the physic mode of the object. You hve a choice between <b>static</b> and <b>dynamic</b>.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collideWorldBounds",
+        "value": "Sets whether this Body collides with the world boundary.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collisionList",
+        "value": "The list of all object whom will collide with the current object.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onPointerdown",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "animations",
+        "value": "The list of the animation for the current object.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "frameWidth",
+        "value": "The fixed width of each frame.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "frameHeight",
+        "value": "The fixed height of each frame. If not set it will use the frameWidth as the height.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 51
+  },
+  {
+    "type": "TileImage",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A TileImage is a Image that has a repeating texture.<br>\n\nThe texture can be scrolled and scaled independently of the TileImage itself. Textures will automatically wrap and are designed so that you can create game backdrops using seamless textures as a source.<br>\n\nYou shouldn't ever create a TileImage any larger than your actual canvas size. If you want to create a large repeating background that scrolls across the whole map of your game, then you create a TileImage that fits the canvas size and then use the tilePosition property to scroll the texture as the player moves. If you create a TileImage that is thousands of pixels in size then it will consume huge amounts of memory and cause performance issues. Remember: use tilePosition to scroll your texture and tileScale to adjust the scale of the texture - don't resize the image itself or make it larger than it needs.<br>\n\nAn important note about Tile Image and NPOT textures: Internally, TileImage textures use GL_REPEAT to provide seamless repeating of the textures. This, combined with the way in which the textures are handled in WebGL, means they need to be POT (power-of-two) sizes in order to wrap. If you provide a NPOT (non power-of-two) texture to a TileImage it will generate a POT sized canvas and draw your texture to it, scaled up to the POT size. It's then scaled back down again during rendering to the original dimensions. While this works, in that it allows you to use any size texture for a Tile Image, it does mean that NPOT textures are going to appear anti-aliased when rendered, due to the interpolation that took place when it was resized into a POT texture. This is especially visible in pixel art graphics. If you notice it and it becomes an issue, the only way to avoid it is to ensure that you provide POT textures for Tile Images.<br>\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the TileImage type.",
+        "code": {
+          "at": "Rectangle {\n}",
+          "js": "...",
+          "css": "..."
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "source",
+        "value": "The Path of the image to be loaded.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopLeft",
+        "value": "The alpha value starting from the top-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityTopRight",
+        "value": "The alpha value starting from the top-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomLeft",
+        "value": "The alpha value starting from the bottom-left of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "opacityBottomRight",
+        "value": "The alpha value starting from the bottom-right of the Game Object. This value is interpolated from the corner to the center of the Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scale",
+        "value": "This is a special setter that allows you to set both the horizontal and vertical scale of this Game Object to the same value, at the same time. When reading this value, the result returned is <b>(scaleX + scaleY) / 2</b>.\n\nUse of this property implies you wish the horizontal and vertical scales to be equal to each other. If this isn't the case, use the <b>scaleX</b> or <b>scaleY</b> properties instead.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleX",
+        "value": "The horizontal scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "scaleY",
+        "value": "The vertical scale of this Game Object.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipX",
+        "value": "The horizontally flipped state of the Game Object. <br>\nA Game Object that is flipped horizontally will render inversed on the horizontal axis. Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "flipY",
+        "value": "The vertically flipped state of the Game Object. <br>\nA Game Object that is flipped vertically will render inversed on the vertical axis (i.e. upside down) Flipping always takes place from the middle of the texture and does not impact the scale value. If this Game Object has a physics body, it will not change the body. This is a rendering toggle only.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityX",
+        "value": "Sets the Body's horizontal gravity.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "gravityY",
+        "value": "In most cases, Artefact can automatically figure out when the transition has finished. By default, Artefact waits for the first transition�s end or animation�s end event on the root.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceX",
+        "value": "Sets the Body's horizontal bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "setBounceY",
+        "value": "Sets the Body's vertical bounce.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "interactive",
+        "value": "Pass this Game Object to the Input Manager to enable it for Input. <br>\nInput works by using hit areas, these are nearly always geometric shapes, such as rectangles or circles, that act as the hit area for the Game Object. However, you can provide your own hit area shape and callback, should you wish to handle some more advanced input detection. <br>\nIf no arguments are provided it will try and create a rectangle hit area based on the texture frame the Game Object is using. If this isn't a texture-bound object, such as a Graphics or BitmapText object, this will fail, and you'll need to provide a specific shape for it to use.\n",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "physic",
+        "value": "Set the physic mode of the object. You hve a choice between <b>static</b> and <b>dynamic</b>.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collideWorldBounds",
+        "value": "Sets whether this Body collides with the world boundary.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "collisionList",
+        "value": "The list of all object whom will collide with the current object.",
+        "code": "...",
+        "inputType": "Array"
+      },
+      {
+        "type": "DocuCode",
+        "title": "onPointerdown",
+        "value": "",
+        "code": "...",
+        "inputType": "Signal"
+      },
+      {
+        "type": "DocuCode",
+        "title": "frameWidth",
+        "value": "The fixed width of each frame.",
+        "code": "...",
+        "inputType": "int"
+      },
+      {
+        "type": "DocuCode",
+        "title": "frameHeight",
+        "value": "The fixed height of each frame. If not set it will use the frameWidth as the height.",
+        "code": "...",
+        "inputType": "int"
+      }
+    ],
+    "ip": 52
+  },
+  {
+    "type": "Camera",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "The Camera Manager is a plugin that belongs to a Scene and is responsible for managing all of the Scene Cameras. <br>\nBy default you can access the Camera Manager from within a Scene using this.cameras, although this can be changed in your game config. <br>\nCreate new Cameras using the add method. Or extend the Camera class with your own addition code and then add the new Camera in using the addExisting method. <br>\nCameras provide a view into your game world, and can be positioned, rotated, zoomed and scrolled accordingly. <br>\nA Camera consists of two elements: The viewport and the scroll values. <br>\nThe viewport is the physical position and size of the Camera within your game. Cameras, by default, are created the same size as your game, but their position and size can be set to anything. This means if you wanted to create a camera that was 320x200 in size, positioned in the bottom-right corner of your game, you'd adjust the viewport to do that (using methods like setViewport and setSize). <br>\nIf you wish to change where the Camera is looking in your game, then you scroll it. You can do this via the properties scrollX and scrollY or the method setScroll. Scrolling has no impact on the viewport, and changing the viewport has no impact on the scrolling. <br>\nBy default a Camera will render all Game Objects it can see. You can change this using the ignore method, allowing you to filter Game Objects out on a per-Camera basis. The Camera Manager can manage up to 31 unique 'Game Object ignore capable' Cameras. Any Cameras beyond 31 that you create will all be given a Camera ID of zero, meaning that they cannot be used for Game Object exclusion. This means if you need your Camera to ignore Game Objects, make sure it's one of the first 31 created. <br>\nA Camera also has built-in special effects including Fade, Flash, Camera Shake, Pan and Zoom..\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Camera type.",
+        "code": {
+          "at": "Rectangle {\n}",
+          "js": "...",
+          "css": "..."
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "startFollow",
+        "value": "The name or id of the object which the camera should follow.",
+        "code": "...",
+        "inputType": "String"
+      }
+    ],
+    "ip": 53
+  },
+  {
+    "type": "StaticGroup",
+    "categorie": "Game",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "An Arcade Physics Static Group object.\nAll Game Objects created by or added to this Group will automatically be given static Arcade Physics bodies, if they have no body.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the StaticGroup type.",
+        "code": {
+          "at": "Rectangle {\n}",
+          "js": "...",
+          "css": "..."
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "collisionList",
+        "value": "The list of all object whom will collide with the current object.",
+        "code": "...",
+        "inputType": "Array"
+      }
+    ],
+    "ip": 54
+  },
+  {
+    "type": "Switch",
+    "categorie": "Input-Control",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Switch is an option button that can be dragged or toggled on (checked) or off (unchecked). Switches are typically used to select between two states."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Switch type.",
+        "code": {
+          "at": "Switch{  \n  id: \"exampleSwitch\",\n  width: 252,\n  height: 100,\n  x: 0,\n  y: 0,\n  label: \"artefact\",\n  color: \"#aaeb1d\",\n  checked: false\n}",
+          "js": "",
+          "css": ""
+        }
+      },
+      {
+        "type": "DocuCode",
+        "title": "label",
+        "value": "Sets input label.",
+        "code": "...",
+        "inputType": "String"
+      },
+      {
+        "type": "DocuCode",
+        "title": "color",
+        "value": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color.",
+        "code": "...",
+        "inputType": "color"
+      },
+      {
+        "type": "DocuCode",
+        "title": "checked",
+        "value": "This property set the state of the Switch.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "disabled",
+        "value": "Disable the input.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "readOnly",
+        "value": "Puts input in readonly state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "error",
+        "value": "Puts the input in a manual error state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "success",
+        "value": "Puts the input in a manual success state.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "indeterminate",
+        "value": "Sets an indeterminate state for the checkbox.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "loading",
+        "value": "Displays linear progress bar.",
+        "code": "...",
+        "inputType": "bool"
+      },
+      {
+        "type": "DocuCode",
+        "title": "inset",
+        "value": "You can make switch render in inset mode.",
+        "code": "...",
+        "inputType": "bool"
+      }
+    ],
+    "ip": 55
+  },
+  {
+    "type": "Data",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "It allows you to define a special type of variable. When a new instance of an object is created, it adds all the <b>Data</b> found in its <b>reactivy system</b>. When the values of those properties change, the view will �react�, updating to match the new values."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Data.",
+        "code": {
+          "at": "\nItem{  \n  id: \"example\",\n  width: 365,\n  height: 300,\n  x: 0,\n  y: 0,\n  child: [\n    Text{     \n      id: \"textexample3\",\n      width: 100,\n      height: 100,\n      x: 57,\n      y: 58,\n      value: \"<#count#>\",\n      horizontalAlign: \"center\",\n      verticalAlign: \"center\",\n      fontSize: 28,\n      color: \"#eaa161\"\n    }\n  ]\n}, \n  ",
+          "js": "Data count = 100",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 56
+  },
+  {
+    "type": "Method",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their this context automatically bound to the Vue instance."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Method type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"example\",\n  width: 365,\n  height: 300,\n  x: 0,\n  y: 0,\n  child: [\n    Text{     \n      id: \"textexample3\",\n      width: 100,\n      height: 100,\n      x: 57,\n      y: 58,\n      value: \"<#count#>\",\n      horizontalAlign: \"center\",\n      verticalAlign: \"center\",\n      fontSize: 28,\n      color: \"#eaa161\"\n    },\n    Button{     \n      id: \"buttonexample3\",\n      width: 80,\n      height: 80,\n      x: 0,\n      y: 0,\n      fab: true,\n      onClicked: \"increment\",\n      dark: true,\n      backgroundColor: \"#8cb2ef\",\n      icon: \"ion-ios-add\",\n      hasIcon: true\n    }\n  ]\n}, \n  ",
+          "js": "Data count = 100\n\nMethod increment () { \n\tthis.count++;\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 57
+  },
+  {
+    "type": "Property",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "A list/hash of attributes that are exposed to accept data from the parent component. It has an Array-based simple syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Property type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"example\",\n  width: 365,\n  height: 300,\n  x: 0,\n  y: 0,\n  child: [\n    Text{     \n      id: \"textexample3\",\n      width: 100,\n      height: 100,\n      x: 57,\n      y: 58,\n      value: \"<#count#>\",\n      horizontalAlign: \"center\",\n      verticalAlign: \"center\",\n      fontSize: 28,\n      color: \"#eaa161\"\n    }\n  ]\n}, \n  \n\n//================ The parent (main.atObj) =========\n\nObject{  \n  id: \"page1\",\n  name: \"page1\",\n  anchors.right: 0,\n  anchors.left: 0,\n  anchors.top: 0,\n  anchors.bottom: 0,\n  \"bind_count\": 1000\n}, \n  \n\n\n\n\n\n\n",
+          "js": "Property required Number count = 600\n",
+          "css": ""
+        }
+      },
+      {
+        "type": "CalloutTip",
+        "value": "<ul>\n<li> the <b>required</b>, <b>Number(Type)</b> and the <b>Value (600)</b> are not mandatory</li>\n<li>type: can be one of the following native constructors: String, Number, Boolean, Array, Object, Date, Function, Symbol, any custom constructor function or an array of those.</li>\n</ul>\n"
+      }
+    ],
+    "ip": 58
+  },
+  {
+    "type": "Computed",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Computed properties to be mixed into the Vue instance. All getters and setters have their this context automatically bound to the Vue instance.\nComputed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance�s scope (i.e. not reactive), the computed property will not be updated.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Computed type.",
+        "code": {
+          "at": "\nItem{  \n  id: \"example\",\n  width: 365,\n  height: 300,\n  x: 0,\n  y: 0,\n  child: [\n    Text{     \n      id: \"textexample3\",\n      width: 100,\n      height: 100,\n      x: 57,\n      y: 58,\n      value: \"<#count#>\",\n      horizontalAlign: \"center\",\n      verticalAlign: \"center\",\n      fontSize: 28,\n      color: \"#eaa161\"\n    }\n  ]\n}, \n  ",
+          "js": "Computed count () { \n\treturn 500;\n}\n\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 59
+  },
+  {
+    "type": "LifeCycle",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Below is a diagram for the instance lifecycle. You don�t need to fully understand everything going on right now, but as you learn and build more, it will be a useful reference."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "",
+        "value": "",
+        "code": {
+          "at": "",
+          "js": "",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 60
+  },
+  {
+    "type": "BeforeCreate",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BeforeCreate state.",
+        "code": {
+          "at": "",
+          "js": "BeforeCreate { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": "..."
+        }
+      }
+    ],
+    "ip": 61
+  },
+  {
+    "type": "Created",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the $el property will not be available yet."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Created state.",
+        "code": {
+          "at": "",
+          "js": "Created { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 62
+  },
+  {
+    "type": "BeforeMount",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called right before the mounting begins: the render function is about to be called for the first time."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BeforeMount state.",
+        "code": {
+          "at": "",
+          "js": "BeforeMount { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 63
+  },
+  {
+    "type": "Mounted",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called after the instance has been mounted, where el is replaced by the newly created vm.$el. If the root instance is mounted to an in-document element, vm.$el will also be in-document when mounted is called."
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Mounted state.",
+        "code": {
+          "at": "",
+          "js": "Mounted { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 64
+  },
+  {
+    "type": "BeforeUpdate",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called when data changes, before the DOM is patched. This is a good place to access the existing DOM before an update, e.g. to remove manually added event listeners.<br>\n<b>This hook is not called during server-side rendering, because only the initial render is performed server-side.</b>\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BeforeUpdate state.",
+        "code": {
+          "at": "",
+          "js": "BeforeUpdate { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 65
+  },
+  {
+    "type": "Updated",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called after a data change causes the virtual DOM to be re-rendered and patched.<br>\nThe component�s DOM will have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook. To react to state changes, it�s usually better to use a computed property or watcher instead.\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the Update state.",
+        "code": {
+          "at": "",
+          "js": "Updated { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 66
+  },
+  {
+    "type": "BeforeDestroy",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.<br>\n<b>This hook is not called during server-side rendering.</b>\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BeforeDestroy state.",
+        "code": {
+          "at": "",
+          "js": "BeforeDestroy { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 67
+  },
+  {
+    "type": "Destroyed",
+    "categorie": "AtScript",
+    "doc": [
+      {
+        "type": "DocuText",
+        "title": "Detailed description",
+        "value": "Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.<br>\n<b>This hook is not called during server-side rendering.</b>\n"
+      },
+      {
+        "type": "DocuCodeShow",
+        "title": "Example usage",
+        "value": "The following example shows the simplest usage of the BeforeCreate state.",
+        "code": {
+          "at": "",
+          "js": "Destroyed { \n\tconsole.log(\"Hallo !!!\")\n}\n",
+          "css": ""
+        }
+      }
+    ],
+    "ip": 68
+  }
+]

@@ -1,0 +1,17 @@
+image: ubuntu:18.04
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y lftp
+
+deploy:
+  script:
+    - lftp -u $FTP_USER,$FTP_PASS $FTP_HOST -e "set ftp:ssl-allow no ; mirror -e -R -p ./ public_html/education ; quit"
+    - echo "deployment complete"
+  # specify environment this job is using
+  environment:
+    name: staging
+    url: http://edu.artefact.yo.fr
+  # only run on dev branch
+  only:
+    - master

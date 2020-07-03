@@ -1,0 +1,42 @@
+{
+    "basic": {
+        "desc": "The basic elements are the most primary ones such as rectangles, texts and images.",
+        "icon": "fas fa-code"
+    },
+    "input-control": {
+        "desc": "The input elements represent all the elements allowing the user to give information to the system.",
+        "icon": "fas fa-keyboard"
+    },
+    "special": {
+        "desc": "The special elements are those that directly have native apecs such as animations, complex designs, etc.",
+        "icon": "fas fa-grin-stars"
+    },
+    "layout": {
+        "desc": "The layout elements are those responsible for positioning other elements in the form of tables, columns, etc.",
+        "icon": "fas fa-th-large"
+    },
+    "navigation": {
+        "desc": "The navigation elements allow you to define routes in your project. This allows you to move from one view or page to another.",
+        "icon": "fas fa-route"
+    },
+    "networkelement": {
+        "desc": "Network elements are media elements whose sources come from the Internet or any other network.",
+        "icon": "fas fa-wifi"
+    },
+    "animation": {
+        "desc": "The animation element are element whose allows you to associate with an child element animation for different events.",
+        "icon": "fas fa-expand-arrows-alt"
+    },
+    "multimedia": {
+        "desc": "Multimedia comes in many different formats. It can be almost anything you can hear or see, like images, music, sound, videos, records, films, animations, and more.",
+        "icon": "fas fa-photo-video"
+    },
+    "game": {
+        "desc": "The game's element are element whose allows you to create 2D game.",
+        "icon": "fas fa-gamepad"
+    },
+    "atscript": {
+        "desc": "Artefact uses JavaScript as a scripting language for setting up functions, events, signals ... But it is a slightly modified version with a number of new rules..",
+        "icon": "fas fa-scroll"
+    }
+}

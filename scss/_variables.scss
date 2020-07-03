@@ -1,0 +1,42 @@
+// Fonts
+$fonts: 'Montserrat', sans-serif;
+$rob: 'Roboto', sans-serif;
+$play: 'Playfair Display', serif;
+
+
+/*Color Variables*/
+$baseColor: #1c63bf;
+$primary-color : #5492c4;
+$secondary-color : #3181c3;
+$dip: #222222;
+$pfont: #777777; 
+$title-color	: #222222;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+ 
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+ 
+// Tablets and small desktops
+$screen-lg-min: 992px;
+ 
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+/*=================== fonts ====================*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500,700');
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+

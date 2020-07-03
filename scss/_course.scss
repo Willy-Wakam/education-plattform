@@ -1,0 +1,306 @@
+/* Feature Product Area css
+============================================================================================ */
+
+.latest_product_inner {
+    margin-bottom: -35px;
+}
+
+/* End Feature Product Area css
+============================================================================================ */
+
+
+/* Product Sidebar Area css
+============================================================================================ */
+
+.cat_product_area {
+    .latest_product_inner {
+        padding-top: 30px;
+        margin-bottom: -50px;
+        .f_p_item {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.left_widgets {
+    margin-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 10px 10px 0px rgba(153, 153, 153, 0.1);
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.widgets_inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.l_w_title {
+    background: $primary-color;
+    padding-left: 30px;
+    h3 {
+        margin-bottom: 0px;
+        font-size: 14px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 60px;
+    }
+}
+
+.cat_widgets {
+    .list {
+        li {
+            margin-bottom: 13px;
+            a {
+                font-size: 14px;
+                font-family: $rob;
+                color: $dip;
+            }
+            .list {
+                margin-top: 10px;
+                padding-left: 35px;
+                border-top: 1px solid #eeeeee;
+                padding-top: 10px;
+                display: none;
+            }
+        }
+    }
+}
+
+.p_filter_widgets {
+    .widgets_inner {
+        border-bottom: 1px solid #eeeeee;
+        &:last-child {
+            border-bottom: 0px;
+        }
+    }
+    h4 {
+        color: $dip;
+        font-size: 14px;
+        font-family: $rob;
+        font-weight: normal;
+        margin-bottom: 22px;
+        margin-top: 10px;
+    }
+    .list {
+        li {
+            margin-bottom: 18px;
+            a {
+                padding-left: 30px;
+                font-size: 14px;
+                font-family: $rob;
+                font-weight: normal;
+                color: $pfont;
+                position: relative;
+                &:before {
+                    content: "";
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 50%;
+                    border: 1px solid $pfont;
+                    position: absolute;
+                    left: 0px;
+                    top: 5px;
+                    @include transition3;
+                }
+                &:after {
+                    content: "";
+                    height: 4px;
+                    width: 4px;
+                    background: #fff;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 3px;
+                    top: 8px;
+                    @include transition3;
+                }
+            }
+            &.active,
+            &:hover {
+                a {
+                    &:before {
+                        background: $baseColor;
+                        border-color: $baseColor;
+                    }
+                }
+            }
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .range_item {
+        .ui-slider {
+            height: 6px;
+            border: none;
+            background: $primary-color;
+            color: #fff;
+
+            .ui-slider-range {
+                background: $primary-color;
+            color: #fff;
+            }
+            .ui-slider-handle {
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                border: none;
+                background: $baseColor;
+                outline: none !important;
+                box-shadow: none;
+                top: -6px;
+                cursor: pointer;
+            }
+        }
+        label {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            color: $pfont;
+            font-family: $rob;
+            margin-top: 15px;
+        }
+        input {
+            display: inline-block;
+            border: none;
+            width: 100px;
+            font-size: 14px;
+            color: $pfont;
+            font-family: $rob;
+            margin-top: 9px;
+            padding-left: 3px;
+            @include placeholder {
+                font-size: 14px;
+                color: $pfont;
+                font-family: $rob;
+            }
+        }
+    }
+}
+
+.product_top_bar {
+    background: $primary-color;
+    clear: both;
+    display: flex;
+    padding: 10px 20px;
+    color: #fff;
+
+    .left_dorp {
+        .sorting {
+            display: inline-block;
+            clear: none;
+            border: 1px solid #eeeeee;
+            border-radius: 0px;
+            height: 40px;
+            width: 210px;
+            padding-left: 20px;
+            span {
+                font-size: 14px;
+                font-family: $rob;
+                color: #555555;
+            }
+            .list {
+                width: 100%;
+                border-radius: 0px;
+                li {
+                    font-size: 14px;
+                    font-family: $rob;
+                    color: #555555;
+                }
+            }
+            &:after {
+                content: "\f0d7";
+                font: normal normal normal 14px/1 FontAwesome;
+                transform: rotate(0);
+                border: none;
+                color: #555555;
+                margin-top: -6px;
+                right: 20px;
+            }
+        }
+        .show {
+            clear: none;
+            display: inline-block;
+            clear: none;
+            border: 1px solid #eeeeee;
+            border-radius: 0px;
+            height: 40px;
+            width: 120px;
+            padding-left: 20px;
+            margin-left: 10px;
+            span {
+                font-size: 14px;
+                font-family: $rob;
+                color: #555555;
+            }
+            .list {
+                width: 100%;
+                border-radius: 0px;
+                li {
+                    font-size: 14px;
+                    font-family: $rob;
+                    color: #555555;
+                }
+            }
+            &:after {
+                content: "\f0d7";
+                font: normal normal normal 14px/1 FontAwesome;
+                transform: rotate(0);
+                border: none;
+                color: #555555;
+                margin-top: -6px;
+                right: 20px;
+            }
+        }
+    }
+}
+
+.cat_page {
+    .pagination {
+        margin-bottom: 0px;
+        border-radius: 0px;
+        li {
+            a {
+                height: 40px;
+                width: 40px;
+                border-radius: 0px;
+                background: #fff;
+                padding: 0px;
+                text-align: center;
+                line-height: 38px;
+                border-color: #eeeeee;
+                border-radius: 0px !important;
+                font-size: 14px;
+                color: $dip;
+                font-weight: normal;
+                font-family: $rob;
+            }
+            &.blank {
+                a {
+                    background: transparent;
+                    color: #cccccc;
+                    border: none;
+                }
+            }
+            &:hover,
+            &.active {
+                a {
+                    background: $baseColor;
+                    color: #fff;
+                    border-color: $baseColor;
+                }
+            }
+        }
+    }
+}
+
+.most_p_withoutbox {
+    padding-bottom: 120px;
+}
+
+/* End Product Sidebar Area css
+============================================================================================ */
